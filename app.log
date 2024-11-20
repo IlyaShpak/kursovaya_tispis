@@ -1,0 +1,33 @@
+2024-10-20 13:02:49,893 - ERROR - Error processing data: feature_names mismatch: ['Glucose', 'Cholesterol', 'Hemoglobin', 'Platelets', 'White Blood Cells', 'Red Blood Cells', 'Hematocrit', 'Mean Corpuscular Volume', 'Mean Corpuscular Hemoglobin', 'Mean Corpuscular Hemoglobin Concentration', 'Insulin', 'BMI', 'Systolic Blood Pressure', 'Diastolic Blood Pressure', 'Triglycerides', 'HbA1c', 'LDL Cholesterol', 'HDL Cholesterol', 'ALT', 'AST', 'Heart Rate', 'Creatinine', 'Troponin', 'C-reactive Protein'] []
+expected ALT, Diastolic Blood Pressure, HbA1c, BMI, Hemoglobin, Cholesterol, Hematocrit, White Blood Cells, Mean Corpuscular Hemoglobin, HDL Cholesterol, Insulin, Systolic Blood Pressure, Red Blood Cells, LDL Cholesterol, Mean Corpuscular Hemoglobin Concentration, Heart Rate, Triglycerides, Troponin, Creatinine, C-reactive Protein, Platelets, Glucose, AST, Mean Corpuscular Volume in input data
+2024-10-20 13:40:28,444 - INFO - Successful prediction for user 5
+2024-10-20 13:51:29,804 - INFO - Downloading results
+2024-10-20 13:53:51,084 - INFO - Successful prediction for user 5
+2024-10-20 13:54:33,883 - INFO - Successful prediction for user 5
+2024-10-20 13:56:30,669 - INFO - Successful prediction for user 5
+2024-10-20 13:56:41,255 - INFO - Successful prediction for user 5
+2024-10-20 13:56:47,698 - INFO - Successful prediction for user 5
+2024-10-20 13:56:54,089 - INFO - Successful prediction for user 5
+2024-10-20 13:56:58,088 - INFO - Successful prediction for user 5
+2024-10-20 13:57:06,485 - INFO - Successful prediction for user 5
+2024-10-20 13:57:07,802 - INFO - Successful prediction for user 5
+2024-10-20 15:11:49,929 - INFO - Successful prediction for user 4
+2024-10-20 15:12:22,044 - INFO - Successful prediction for user 4
+2024-10-20 15:15:15,026 - INFO - New user registered
+2024-10-20 15:15:28,364 - INFO - Successful prediction for user 6
+2024-10-20 15:21:10,384 - INFO - Successful prediction for user 6
+2024-10-20 16:34:37,526 - INFO - User logged out
+2024-10-20 16:37:34,555 - INFO - New user registered
+2024-10-20 16:37:37,586 - INFO - User logged out
+2024-10-20 16:37:45,923 - INFO - User logged in
+2024-10-20 16:40:37,313 - INFO - Successful prediction for user 7
+2024-10-20 16:41:59,314 - INFO - Successful prediction for user 7
+2024-10-22 13:58:39,954 - INFO - New user registered
+2024-10-22 14:00:07,002 - INFO - User logged out
+2024-10-22 14:00:17,184 - INFO - User logged in
+2024-10-22 14:00:20,761 - INFO - User logged out
+2024-10-22 14:03:23,713 - INFO - User logged in
+2024-10-22 14:03:54,082 - INFO - Successful prediction for user 8
+2024-11-06 12:31:38,459 - INFO - New user registered
+2024-11-19 13:05:37,540 - INFO - User logged in
+2024-11-19 13:06:13,358 - INFO - User logged out

@@ -1,0 +1,94 @@
+2024-05-01 18:52:59,149 - INFO - New user registered
+2024-05-01 18:53:04,764 - INFO - Editing user profile
+2024-05-01 18:53:15,222 - INFO - Successful prediction
+2024-05-01 18:53:17,047 - INFO - Downloading results
+2024-05-01 18:53:23,740 - INFO - User logged out
+2024-05-07 19:44:19,062 - INFO - New user registered
+2024-05-07 19:44:34,199 - INFO - Editing user profile
+2024-05-07 19:44:45,542 - INFO - Successful prediction
+2024-05-07 19:44:48,897 - INFO - Downloading results
+2024-10-19 22:20:58,881 - INFO - New user registered
+2024-10-19 22:21:43,326 - ERROR - Error predicting data: DataFrame.dtypes for data must be int, float, bool or category. When categorical type is supplied, The experimental DMatrix parameter`enable_categorical` must be set to `True`.  Invalid columns:Disease: object
+2024-10-19 22:21:43,327 - ERROR - Exception on /process_data [POST]
+Traceback (most recent call last):
+  File "/home/ilya/PycharmProjects/flaskProject3/.venv/lib/python3.10/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ilya/PycharmProjects/flaskProject3/.venv/lib/python3.10/site-packages/flask/app.py", line 883, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/home/ilya/PycharmProjects/flaskProject3/.venv/lib/python3.10/site-packages/flask/app.py", line 902, in finalize_request
+    response = self.make_response(rv)
+  File "/home/ilya/PycharmProjects/flaskProject3/.venv/lib/python3.10/site-packages/flask/app.py", line 1174, in make_response
+    raise TypeError(
+TypeError: The view function for 'process_data' did not return a valid response. The function either returned None or ended without a return statement.
+2024-10-19 22:22:13,869 - INFO - Downloading results
+2024-10-19 22:22:13,883 - ERROR - Exception on /download_results [GET]
+Traceback (most recent call last):
+  File "/home/ilya/PycharmProjects/flaskProject3/.venv/lib/python3.10/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ilya/PycharmProjects/flaskProject3/.venv/lib/python3.10/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ilya/PycharmProjects/flaskProject3/.venv/lib/python3.10/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ilya/PycharmProjects/flaskProject3/.venv/lib/python3.10/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ilya/PycharmProjects/flaskProject3/.venv/lib/python3.10/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/home/ilya/PycharmProjects/flaskProject3/my_app/routes.py", line 174, in download_results
+    return jsonify(user_result.json_result), 200, {'Content-Disposition': 'attachment; filename="results.json"'}
+AttributeError: 'NoneType' object has no attribute 'json_result'
+2024-10-19 22:24:49,388 - ERROR - Error predicting data: DataFrame.dtypes for data must be int, float, bool or category. When categorical type is supplied, The experimental DMatrix parameter`enable_categorical` must be set to `True`.  Invalid columns:Disease: object
+2024-10-19 22:24:49,389 - ERROR - Exception on /process_data [POST]
+Traceback (most recent call last):
+  File "/home/ilya/PycharmProjects/flaskProject3/.venv/lib/python3.10/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ilya/PycharmProjects/flaskProject3/.venv/lib/python3.10/site-packages/flask/app.py", line 883, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/home/ilya/PycharmProjects/flaskProject3/.venv/lib/python3.10/site-packages/flask/app.py", line 902, in finalize_request
+    response = self.make_response(rv)
+  File "/home/ilya/PycharmProjects/flaskProject3/.venv/lib/python3.10/site-packages/flask/app.py", line 1174, in make_response
+    raise TypeError(
+TypeError: The view function for 'process_data' did not return a valid response. The function either returned None or ended without a return statement.
+2024-10-19 22:28:09,462 - INFO - Successful prediction
+2024-10-20 00:19:46,241 - INFO - New user registered
+2024-10-20 00:19:55,391 - INFO - Successful prediction
+2024-10-20 00:21:10,070 - INFO - Successful prediction
+2024-10-20 00:22:36,330 - INFO - Successful prediction
+2024-10-20 00:22:42,390 - INFO - Successful prediction
+2024-10-20 00:25:08,928 - INFO - Successful prediction
+2024-10-20 00:25:23,243 - INFO - Successful prediction
+2024-10-20 00:26:22,133 - INFO - Successful prediction
+2024-10-20 00:30:26,268 - INFO - Successful prediction
+2024-10-20 00:32:18,709 - INFO - Successful prediction
+2024-10-20 00:32:23,158 - INFO - Downloading results
+2024-10-20 00:34:46,744 - INFO - Successful prediction
+2024-10-20 00:34:55,062 - INFO - Successful prediction
+2024-10-20 00:36:24,625 - INFO - Successful prediction
+2024-10-20 00:36:59,982 - INFO - Successful prediction
+2024-10-20 00:38:55,513 - INFO - Successful prediction
+2024-10-20 00:40:12,816 - INFO - Successful prediction
+2024-10-20 12:30:19,586 - ERROR - Error predicting data: Not supported type for data.<class 'dict'>
+2024-10-20 12:30:19,586 - ERROR - Exception on /process_data [POST]
+Traceback (most recent call last):
+  File "/home/ilya/PycharmProjects/flaskProject3/.venv/lib/python3.10/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ilya/PycharmProjects/flaskProject3/.venv/lib/python3.10/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ilya/PycharmProjects/flaskProject3/.venv/lib/python3.10/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ilya/PycharmProjects/flaskProject3/.venv/lib/python3.10/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/ilya/PycharmProjects/flaskProject3/.venv/lib/python3.10/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/home/ilya/PycharmProjects/flaskProject3/my_app/routes.py", line 182, in process_data
+    return jsonify({'image': img_base64}), 200
+UnboundLocalError: local variable 'img_base64' referenced before assignment
+2024-10-20 12:55:02,062 - INFO - Successful prediction for user 5
+2024-10-20 12:58:27,009 - INFO - Successful prediction for user 5
+2024-10-20 13:00:21,207 - INFO - Successful prediction for user 5
+2024-10-20 13:00:52,918 - INFO - Successful prediction for user 5
+2024-10-20 13:01:07,462 - ERROR - Error processing data: feature_names mismatch: ['Glucose', 'Cholesterol', 'Hemoglobin', 'Platelets', 'White Blood Cells', 'Red Blood Cells', 'Hematocrit', 'Mean Corpuscular Volume', 'Mean Corpuscular Hemoglobin', 'Mean Corpuscular Hemoglobin Concentration', 'Insulin', 'BMI', 'Systolic Blood Pressure', 'Diastolic Blood Pressure', 'Triglycerides', 'HbA1c', 'LDL Cholesterol', 'HDL Cholesterol', 'ALT', 'AST', 'Heart Rate', 'Creatinine', 'Troponin', 'C-reactive Protein'] []
+expected Systolic Blood Pressure, AST, C-reactive Protein, Triglycerides, Creatinine, Insulin, BMI, ALT, White Blood Cells, HbA1c, Hematocrit, Platelets, Mean Corpuscular Hemoglobin, Red Blood Cells, Heart Rate, Diastolic Blood Pressure, Troponin, Hemoglobin, Glucose, Mean Corpuscular Hemoglobin Concentration, HDL Cholesterol, Mean Corpuscular Volume, Cholesterol, LDL Cholesterol in input data
+2024-10-20 13:01:13,922 - ERROR - Error processing data: feature_names mismatch: ['Glucose', 'Cholesterol', 'Hemoglobin', 'Platelets', 'White Blood Cells', 'Red Blood Cells', 'Hematocrit', 'Mean Corpuscular Volume', 'Mean Corpuscular Hemoglobin', 'Mean Corpuscular Hemoglobin Concentration', 'Insulin', 'BMI', 'Systolic Blood Pressure', 'Diastolic Blood Pressure', 'Triglycerides', 'HbA1c', 'LDL Cholesterol', 'HDL Cholesterol', 'ALT', 'AST', 'Heart Rate', 'Creatinine', 'Troponin', 'C-reactive Protein'] []
+expected Systolic Blood Pressure, AST, C-reactive Protein, Triglycerides, Creatinine, Insulin, BMI, ALT, White Blood Cells, HbA1c, Hematocrit, Platelets, Mean Corpuscular Hemoglobin, Red Blood Cells, Heart Rate, Diastolic Blood Pressure, Troponin, Hemoglobin, Glucose, Mean Corpuscular Hemoglobin Concentration, HDL Cholesterol, Mean Corpuscular Volume, Cholesterol, LDL Cholesterol in input data
+2024-10-20 13:02:19,616 - ERROR - Error processing data: feature_names mismatch: ['Glucose', 'Cholesterol', 'Hemoglobin', 'Platelets', 'White Blood Cells', 'Red Blood Cells', 'Hematocrit', 'Mean Corpuscular Volume', 'Mean Corpuscular Hemoglobin', 'Mean Corpuscular Hemoglobin Concentration', 'Insulin', 'BMI', 'Systolic Blood Pressure', 'Diastolic Blood Pressure', 'Triglycerides', 'HbA1c', 'LDL Cholesterol', 'HDL Cholesterol', 'ALT', 'AST', 'Heart Rate', 'Creatinine', 'Troponin', 'C-reactive Protein'] []
+expected ALT, Diastolic Blood Pressure, HbA1c, BMI, Hemoglobin, Cholesterol, Hematocrit, White Blood Cells, Mean Corpuscular Hemoglobin, HDL Cholesterol, Insulin, Systolic Blood Pressure, Red Blood Cells, LDL Cholesterol, Mean Corpuscular Hemoglobin Concentration, Heart Rate, Triglycerides, Troponin, Creatinine, C-reactive Protein, Platelets, Glucose, AST, Mean Corpuscular Volume in input data

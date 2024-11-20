@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Загрузка данных и ручной ввод</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e9f3f7;
+        }
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            margin-top: 20px;
+        }
+        input[type="file"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .section-title {
+            font-size: 20px;
+            margin: 15px 0 10px;
+            font-weight: bold;
+            color: #0056b3;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+        #results {
+            max-height: 300px;
+            overflow-y: auto;
+            padding: 5px;
+        }
+        #results ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        #resultImage {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Ввод данных</h1>
+
+    <div class="section-title">Загрузка CSV файла</div>
+    <form method="POST" enctype="multipart/form-data" action="/process_data" id="uploadForm">
+        <input type="file" name="file" accept=".csv">
+        <input type="submit" value="Загрузить">
+    </form>
+
+    <hr>
+
+    <div class="section-title">Ручной ввод данных</div>
+<form method="POST" action="/process_manual_data" id="manualForm">
+    <input type="number" name="Glucose" placeholder="Глюкоза" step="0.01" required>
+    <input type="number" name="Cholesterol" placeholder="Холестерин" step="0.01" required>
+    <input type="number" name="Hemoglobin" placeholder="Гемоглобин" step="0.01" required>
+    <input type="number" name="Platelets" placeholder="Тромбоциты" step="0.01" required>
+    <input type="number" name="White Blood Cells" placeholder="Лейкоциты" step="0.01" required>
+    <input type="number" name="Red Blood Cells" placeholder="Эритроциты" step="0.01" required>
+    <input type="number" name="Hematocrit" placeholder="Гематокрит" step="0.01" required>
+    <input type="number" name="Mean Corpuscular Volume" placeholder="Средний объём эритроцитов" step="0.01" required>
+    <input type="number" name="Mean Corpuscular Hemoglobin" placeholder="Средний гемоглобин эритроцитов" step="0.01" required>
+    <input type="number" name="Mean Corpuscular Hemoglobin Concentration" placeholder="Средняя концентрация гемоглобина в эритроцитах" step="0.01" required>
+    <input type="number" name="Insulin" placeholder="Инсулин" step="0.01" required>
+    <input type="number" name="BMI" placeholder="ИМТ" step="0.01" required>
+    <input type="number" name="Systolic Blood Pressure" placeholder="Систолическое давление" step="0.01" required>
+    <input type="number" name="Diastolic Blood Pressure" placeholder="Диастолическое давление" step="0.01" required>
+    <input type="number" name="Triglycerides" placeholder="Триглицериды" step="0.01" required>
+    <input type="number" name="HbA1c" placeholder="HbA1c" step="0.01" required>
+    <input type="number" name="LDL Cholesterol" placeholder="ЛПНП холестерин" step="0.01" required>
+    <input type="number" name="HDL Cholesterol" placeholder="ЛПВП холестерин" step="0.01" required>
+    <input type="number" name="ALT" placeholder="АЛТ" step="0.01" required>
+    <input type="number" name="AST" placeholder="АСТ" step="0.01" required>
+    <input type="number" name="Heart Rate" placeholder="Частота сердечных сокращений" step="0.01" required>
+    <input type="number" name="Creatinine" placeholder="Креатинин" step="0.01" required>
+    <input type="number" name="Troponin" placeholder="Тропонин" step="0.01" required>
+    <input type="number" name="C-reactive Protein" placeholder="C-реактивный белок" step="0.01" required>
+    <input type="submit" value="Отправить данные">
+</form>
+
+</form>
+
+    <hr>
+
+    <div id="results">
+        <ul id="resultsList"></ul>
+    </div>
+</div>
+
+<script>
+    // Отправка формы для CSV
+    document.getElementById("uploadForm").onsubmit = async function(event) {
+        event.preventDefault();
+        const formData = new FormData(this);
+        try {
+            const response = await fetch('/process_data', {
+                method: 'POST',
+                body: formData
+            });
+            const result = await response.json();
+            displayResults(result);
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    };
+
+    // Отправка формы для ручного ввода данных
+    document.getElementById("manualForm").onsubmit = async function(event) {
+        event.preventDefault();
+        const formData = new FormData(this);
+        try {
+            const response = await fetch('/process_manual_data', {
+                method: 'POST',
+                body: new URLSearchParams(new FormData(this)) // Передача данных в формате URL
+            });
+            const result = await response.json();
+            displayResults(result);
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    };
+
+    function displayResults(data) {
+        const resultsList = document.getElementById("resultsList");
+        resultsList.innerHTML = "";
+
+        if (data.image) {
+            const resultImage = document.createElement("img");
+            resultImage.src = 'data:image/png;base64,' + data.image;
+            resultImage.id = "resultImage";
+            resultsList.appendChild(resultImage);
+        } else {
+            const li = document.createElement("li");
+            li.textContent = 'Error processing data: ' + (data.error || 'Unknown error');
+            resultsList.appendChild(li);
+        }
+    }
+</script>
+</body>
+</html>
